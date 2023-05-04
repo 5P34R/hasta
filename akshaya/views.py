@@ -22,7 +22,7 @@ class AllAkshaya(APIView):
 
 
 longitude = 76.6249
-latitude = 9.6890
+latitude = 9.67406413
 
 user_location = Point(longitude, latitude, srid=4326)
 
