@@ -25,9 +25,11 @@ SECRET_KEY = 'django-insecure-rtz_%+yld9nxud4=94#_o3@sl-qoqj3@lrmc^#@wd@638^p49^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = 'akshaya.CustomUser'
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
@@ -41,11 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'rest_framework',   
     'akshaya',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
