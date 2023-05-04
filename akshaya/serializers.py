@@ -15,4 +15,4 @@ class AkshayaSFilterSerializer(ModelSerializer):
     class Meta:
         model = Akshaya
         depth = 1
-        fields = ['id', 'name', 'address', 'city', 'location', 'is_full', 'services']
+        fields = ['id', 'name', 'address', 'city', 'location', 'is_full', 'services']   
