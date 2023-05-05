@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
-from .models import Akshaya
-from .serializers import AkshayaSerializer, AkshayaSFilterSerializer
+from .models import Akshaya, Service
+from .serializers import AkshayaSerializer, AkshayaSFilterSerializer, ServiceSerializer
 from rest_framework.response import Response
 from rest_framework import status
 
@@ -43,3 +43,8 @@ class GetAkshaya(APIView):
         serializer = AkshayaSerializer(obj)
         return Response(serializer.data)
         
+class ListServices(APIView):
+    def get(self, request):
+        services = Service.objects.all()
+        serializer = ServiceSerializer(services, many=True)
+        return Response(serializer.data)

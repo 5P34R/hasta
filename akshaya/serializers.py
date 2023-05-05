@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import Akshaya
+from .models import Akshaya,Service
 
 
 class AkshayaSerializer(ModelSerializer):
@@ -16,3 +16,9 @@ class AkshayaSFilterSerializer(ModelSerializer):
         model = Akshaya
         depth = 1
         fields = ['id', 'name', 'address', 'city', 'location', 'is_full', 'services']   
+
+class ServiceSerializer(ModelSerializer):
+
+    class Meta:
+        model = Service
+        fields = ['id', 'name']
