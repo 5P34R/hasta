@@ -35,3 +35,11 @@ class FilterAkshaya(APIView):
         serializer = AkshayaSFilterSerializer(queryset, many=True)
         return Response(serializer.data)
 
+class GetAkshaya(APIView):
+
+    def post(self, request):
+        aid = request.data.get("akshaya", "")
+        obj = Akshaya.objects.get(id=aid)
+        serializer = AkshayaSerializer(obj)
+        return Response(serializer.data)
+        
